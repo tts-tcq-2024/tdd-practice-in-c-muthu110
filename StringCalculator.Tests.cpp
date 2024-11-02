@@ -42,3 +42,45 @@ TEST(StringCalculatorAddTests, ExpectSumWithCustomDelimiter) {
     int result = add(input);
     ASSERT_EQ(result, expectedresult);
 }
+
+TEST(StringCalculatorAddTests, Sumofintegercommadelimiter) {
+    int expectedresult = 113;
+    const char*  input = "1,112";
+    int result =add(input);
+    ASSERT_EQ(result, expectedresult);
+}
+
+TEST(StringCalculatorAddTests, Sumofintegercommaalphabets) {
+    int expectedresult = 1000;
+    const char*  input = "1,abchd,999";
+    int result =add(input);
+    ASSERT_EQ(result, expectedresult);
+}
+
+TEST(StringCalculatorAddTests, sumofemptystring) {
+    int expectedresult = 0;
+    const char*  input = "";
+    int result =add(input);
+    ASSERT_EQ(result, expectedresult);
+}
+
+TEST(StringCalculatorAddTests, sumofNullstring) {
+    int expectedresult = -1;
+    const char*  input = NULL;
+    int result =add(input);
+    ASSERT_EQ(result, expectedresult);
+}
+
+TEST(StringCalculatorAddTests, sumofsignedintegercommadelimiter) {
+    int expectedresult = -1;
+    const char*  input = "-1,-2";
+    int result =add(input);
+    ASSERT_EQ(result, expectedresult);
+}
+
+TEST(StringCalculatorAddTests, sumofsignedunsignedintegercommadelimiter) {
+    int expectedresult = -1;
+    const char*  input = "1,-2";
+    int result =add(input);
+    ASSERT_EQ(result, expectedresult);
+}
